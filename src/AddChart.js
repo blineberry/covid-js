@@ -41,6 +41,10 @@ function AddChart(props) {
         setAddingChart(false);
     }
 
+    if (props.states.length <= 0) {
+        return (<div>Loading data</div>);
+    }
+
     if (!addingChart) {
         return (<section> 
             <button onClick={() => setAddingChart(true)}>Add chart</button>

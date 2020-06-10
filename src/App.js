@@ -138,7 +138,7 @@ function App(props) {
   }
 
   function getData() {
-    dataService.getStates().then(setStates(states));
+    dataService.getStates().then(setStates);
     dataService.getCounties().then(setCounties);
     dataService.getCountiesData().then(setCountiesData);
     dataService.getStatesData().then(setStatesData);
@@ -266,7 +266,6 @@ function addDataToCountyChart(chart) {
   
   return (
     <article>
-      <button onClick={refreshData}>Refresh data</button>
       <AddChart 
         onChartAdd={handleChartAdd}
         states={states}
@@ -327,7 +326,8 @@ function addDataToCountyChart(chart) {
           </p>
           <p>I didn't feel like futzing with a database server for this, so all the data is 
             handled locally. Apologies for the page load hit. The data should refresh when stale, but if 
-            you think your data is incorrect, you can force a refresh with the "Refresh data" button.</p>
+            you think your data is incorrect, you can force a refresh with the "Refresh data" button 
+            located at the bottom of the page.</p>
         </section>
         <section>
           <h3>About this app</h3>
@@ -343,6 +343,8 @@ function addDataToCountyChart(chart) {
           <p>The data is from the <a href="https://github.com/nytimes/covid-19-data">NY Times 
           dataset</a>, which has US, State, and, importantly, County data.</p>     
         </section>
+
+      <button onClick={refreshData}>Refresh data</button>
     </article>
   );
 }
