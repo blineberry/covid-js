@@ -42,7 +42,7 @@ function AddChart(props) {
     }
 
     if (props.states.length <= 0) {
-        return (<div>Loading data</div>);
+        return (<div>Loading data. (This could take a minute. Sorry!)</div>);
     }
 
     if (!addingChart) {

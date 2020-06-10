@@ -304,15 +304,14 @@ function addDataToCountyChart(chart) {
         <section>
           <h3>Understanding the charts</h3>
           <p>Each chart shows new daily cases on a rolling 7-day average. Y-axis is new cases and 
-            x-axis is each day, starting when a location reaches 30 new cases in a day. </p>
+            x-axis is days, starting when a location reaches 30 new cases in a day. </p>
           <p>Counties are on the same scale as each other and states are on the same scale as 
             each other.</p>
           <p>The dashed line represents data from the last 14 days. Some locations (my state of 
             Georgia included) backdate cases to an estimated "infected date", meaning that the most
             recent 14 days are unreliable. The end result is that the last 14 days almost always 
-            show a downard trend. I don't know how many other locations do the same thing, 
-            so the dashed line may or may not be reliable, but you can generally expect that it may 
-            go up, but not down.</p>
+            show a downward trend. I don't know how many other locations do the same thing, 
+            so the dashed line may or may not be reliable.</p>
           <p>The charts are color coded along a simplified version of <a href="http://www.asymco.com/">Horace Dediu</a>'s categorization:</p>
           <blockquote>
             <p>Green: Late Stage (>50% post-peak)<br/>
@@ -320,7 +319,7 @@ function addDataToCountyChart(chart) {
             Orange: Middle-Early Stage (peaked)<br/>
             Pink: Early Stage [or indeterminate] (pre-peak)</p>
           </blockquote>
-          <p>My simplified application means that often indeterminate stages are mis-categorized another
+          <p>My simplified application means that often indeterminate stages are mis-categorized. If
             a location doesn't have a clear peak yet, it is probably Early/Indeterminate, regardless of 
             the color.
           </p>
@@ -328,6 +327,7 @@ function addDataToCountyChart(chart) {
             handled locally. Apologies for the page load hit. The data should refresh when stale, but if 
             you think your data is incorrect, you can force a refresh with the "Refresh data" button 
             located at the bottom of the page.</p>
+          <p>I wish I could've normalized the data with cases per capita, but the data source doesn't have population data.</p>
         </section>
         <section>
           <h3>About this app</h3>
