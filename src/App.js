@@ -343,8 +343,10 @@ function addDataToCountyChart(chart) {
           <p>The data is from the <a href="https://github.com/nytimes/covid-19-data">NY Times 
           dataset</a>, which has US, State, and, importantly, County data.</p>     
         </section>
-
-      <button onClick={refreshData}>Refresh data</button>
+        <footer>
+          <button onClick={refreshData}>Refresh data</button> <span>
+            <a href="https://github.com/blineberry/covid-js">View on GitHub.</a></span> <span>Made by <a href="https://orangegnome.com">Brent Lineberry</a>.</span>
+        </footer>
     </article>
   );
 }
