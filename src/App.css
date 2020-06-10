@@ -1,3 +1,49 @@
+.chartset {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.covidChart {
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+.chart {
+  background: white;
+  width: 300px;
+  height: 200px;
+}
+
+.covidChart-content {
+  position: relative;
+  padding-left: 2em;
+  padding-top: 0.5em;
+}
+
+.covidChart-label {
+  font-size: 0.75em;
+  position: absolute;
+  left: 0;
+  width: 2.16em;
+  text-align: right;
+  margin-bottom: -0.5em;
+}
+
+.covidChart-label-100 {
+  top: 0;
+}
+.covidChart-label-75 {
+  bottom: 75%;
+  margin-bottom: -0.5em;
+}
+.covidChart-label-50 {
+  bottom: 50%;
+}
+.covidChart-label-25 {
+  bottom: 25%;
+}
+
 .App {
   text-align: center;
 }
