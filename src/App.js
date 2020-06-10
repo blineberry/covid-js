@@ -138,9 +138,7 @@ function App(props) {
   }
 
   function getData() {
-    dataService.getStates().then((states) => {
-      setStates(states)
-    });
+    dataService.getStates().then(setStates(states));
     dataService.getCounties().then(setCounties);
     dataService.getCountiesData().then(setCountiesData);
     dataService.getStatesData().then(setStatesData);
@@ -304,6 +302,47 @@ function addDataToCountyChart(chart) {
             },
           });
         }} />   
+        <section>
+          <h3>Understanding the charts</h3>
+          <p>Each chart shows new daily cases on a rolling 7-day average. Y-axis is new cases and 
+            x-axis is each day, starting when a location reaches 30 new cases in a day. </p>
+          <p>Counties are on the same scale as each other and states are on the same scale as 
+            each other.</p>
+          <p>The dashed line represents data from the last 14 days. Some locations (my state of 
+            Georgia included) backdate cases to an estimated "infected date", meaning that the most
+            recent 14 days are unreliable. The end result is that the last 14 days almost always 
+            show a downard trend. I don't know how many other locations do the same thing, 
+            so the dashed line may or may not be reliable, but you can generally expect that it may 
+            go up, but not down.</p>
+          <p>The charts are color coded along a simplified version of <a href="http://www.asymco.com/">Horace Dediu</a>'s categorization:</p>
+          <blockquote>
+            <p>Green: Late Stage (>50% post-peak)<br/>
+            Blue: Middle-Late Stage (~50% post-peak)<br/>
+            Orange: Middle-Early Stage (peaked)<br/>
+            Pink: Early Stage [or indeterminate] (pre-peak)</p>
+          </blockquote>
+          <p>My simplified application means that often indeterminate stages are mis-categorized another
+            a location doesn't have a clear peak yet, it is probably Early/Indeterminate, regardless of 
+            the color.
+          </p>
+          <p>I didn't feel like futzing with a database server for this, so all the data is 
+            handled locally. Apologies for the page load hit. The data should refresh when stale, but if 
+            you think your data is incorrect, you can force a refresh with the "Refresh data" button.</p>
+        </section>
+        <section>
+          <h3>About this app</h3>
+          <p>This app was borne out of my desire to both see how the Coronavirus pandemic is
+            faring in locations I care about, seeing that in as narrow a location as possible, 
+            and having some kind of objective markers for when things are "ok". I found great
+            value in the <a href="https://www.ajc.com/news/coronavirus-georgia-covid-dashboard/jvoLBozRtBSVSNQDDAuZxH/#main">AJC's Coronavirus Dashboard</a>, 
+            the <a href="https://dph.georgia.gov/covid-19-daily-status-report">Georgia Department of 
+            Health's COVID 19 Daily Report</a>, and <a href="https://twitter.com/asymco/">Horace 
+            Dediu's periodic chart releases</a>. I would check the AJC and GA DPH daily and would 
+            often anticipate an update from Horace's analysis.
+          </p>
+          <p>The data is from the <a href="https://github.com/nytimes/covid-19-data">NY Times 
+          dataset</a>, which has US, State, and, importantly, County data.</p>     
+        </section>
     </article>
   );
 }
